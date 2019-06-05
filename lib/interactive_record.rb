@@ -62,9 +62,9 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    binding.pry
     attribute.each do |key, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}'"
+      binding.pry
       DB[:conn].execute(sql)
     end
   end
