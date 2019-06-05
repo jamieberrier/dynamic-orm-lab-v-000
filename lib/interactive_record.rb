@@ -40,6 +40,7 @@ class InteractiveRecord
 
     table_info.each do |row|
       self.class.column_names << row["cid"]
+      binding.pry
     end
     self.class.column_names.compact
     binding.pry
