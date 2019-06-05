@@ -43,7 +43,7 @@ class InteractiveRecord
       binding.pry
     end
     self.class.column_names.compact
-    binding.pry
+    #binding.pry
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
