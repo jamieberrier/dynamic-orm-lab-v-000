@@ -38,10 +38,10 @@ class InteractiveRecord
   def values_for_insert
     values = []
     self.class.column_names.each.with_index do |col_name, index|
-      binding.pry
       values << "'#{send(col_name)}'" unless send(col_name).nil?
       values << "'#{send(index)}'" unless send(col_name).nil?
     end
+    binding.pry
     values.join(", ")
   end
 =begin
