@@ -37,11 +37,11 @@ class InteractiveRecord
     sql = "pragma table_info('#{table_name}')"
 
     table_info = DB[:conn].execute(sql)
-    c_names = []
+
     table_info.each do |row|
-      c_names << row["cid"]
+      self.class.column_names << row["cid"]
     end
-    c_names.compact
+    self.class.column_names.compact
     binding.pry
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
