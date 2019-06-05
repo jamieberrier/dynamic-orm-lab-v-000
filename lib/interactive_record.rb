@@ -43,7 +43,7 @@ class InteractiveRecord
     end
     c_names.compact
     binding.pry
-    self.class.column_names.delete_if {|col| col == "id"}.join(", ")
+    #self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
   def values_for_insert
