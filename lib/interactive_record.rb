@@ -65,8 +65,9 @@ class InteractiveRecord
     attribute.each do |key, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}'"
 
-      DB[:conn].execute(sql)
+      array = DB[:conn].execute(sql)
     end
+    array
     binding.pry
   end
 end
