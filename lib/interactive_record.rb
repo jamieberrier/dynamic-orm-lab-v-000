@@ -39,7 +39,7 @@ class InteractiveRecord
     values = []
     self.class.column_names.each.with_index do |col_name, index|
       values << "'#{send(col_name)}'" unless send(col_name).nil?
-      values << "'#{send(index)}'" unless send(col_name).nil?
+      values << "'#{send(index.to_s)}'" unless send(col_name).nil?
     end
     binding.pry
     values.join(", ")
