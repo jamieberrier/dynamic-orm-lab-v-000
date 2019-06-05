@@ -40,7 +40,7 @@ class InteractiveRecord
     table_info = DB[:conn].execute(sql)
     c_names = []
     table_info.each do |row|
-      column_names << row["name"]
+      c_names << row["cid"]
     end
     c_names.compact
 
