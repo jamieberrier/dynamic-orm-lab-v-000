@@ -19,7 +19,6 @@ class InteractiveRecord
       column_names << row["name"]
       column_names << index
     end
-    binding.pry
     column_names.compact
   end
 
