@@ -39,7 +39,7 @@ class InteractiveRecord
     table_info = DB[:conn].execute(sql)
     @c_names = self.class.column_names
     table_info.each do |row|
-      @c_names << row["cid"].to_s
+      @c_names << row["cid"].to_s.to_sym
     end
     @c_names.compact
     #binding.pry
