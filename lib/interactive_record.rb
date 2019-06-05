@@ -32,7 +32,6 @@ class InteractiveRecord
   end
 
   def col_names_for_insert
-    binding.pry
     DB[:conn].results_as_hash = true
 
     sql = "pragma table_info('#{table_name}')"
@@ -43,7 +42,7 @@ class InteractiveRecord
       c_names << row["cid"]
     end
     c_names.compact
-
+    binding.pry
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
