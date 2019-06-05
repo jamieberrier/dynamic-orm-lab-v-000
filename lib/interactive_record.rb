@@ -18,6 +18,7 @@ class InteractiveRecord
     table_info.each.with_index do |row, index|
       binding.pry
       column_names << row["name"]
+      column_names << index
     end
     column_names.compact
   end
