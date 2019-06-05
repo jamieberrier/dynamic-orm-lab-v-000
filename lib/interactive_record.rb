@@ -17,6 +17,7 @@ class InteractiveRecord
     column_names = []
     table_info.each.with_index do |row|
       column_names << row["name"]
+      column_names << row["cid"]
     end
     column_names.compact
   end
