@@ -57,7 +57,7 @@ class InteractiveRecord
     #  values << "'#{send(col_name)}'" unless send(col_name).nil?
     #end
     values.join(", ")
-    binding.pry
+    #binding.pry
   end
 =begin
   # describe '#save' do
