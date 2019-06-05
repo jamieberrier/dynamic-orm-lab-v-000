@@ -40,7 +40,6 @@ class InteractiveRecord
     c_names = self.class.column_names
     table_info.each do |row|
       c_names << row["cid"]
-      binding.pry
     end
     c_names.compact
     #binding.pry
