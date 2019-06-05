@@ -37,9 +37,9 @@ class InteractiveRecord
     sql = "pragma table_info('#{self.class.table_name}')"
 
     table_info = DB[:conn].execute(sql)
-
+    c_names = self.class.column_names
     table_info.each do |row|
-      self.class.column_names << row["cid"]
+      c_names << row["cid"]
       binding.pry
     end
     self.class.column_names.compact
